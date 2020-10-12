@@ -1,4 +1,5 @@
 import { Box, makeStyles, Container, Typography } from "@material-ui/core"
+import { useState } from "react"
 
 const useStyles = makeStyles((theme) => ({
   main: {
@@ -26,7 +27,8 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    flexDirection: "column"
+    flexDirection: "column",
+
   },
   title: {
     fontSize: "16px",
@@ -35,21 +37,57 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "900",
     fontFamily: "Roboto",
     textAlign: "center",
-    paddingTop: "30px"
-  }
+    paddingTop: "30px",
+    cursor: "pointer"
+  },
+
 }))
 const WatchOurStory = () => {
   const classes = useStyles()
+  const [openVideo, setOpenVideo] = useState(false)
   return (
     <Box className={classes.main}>
+      {openVideo && (
+        <div className="videoWindow" onClick={(e) =>
+          e.target.classList.contains("videoWindow")
+            ? setOpenVideo(false)
+            : null
+        }>
+          <iframe width="560"
+            height="315"
+            src="https://www.youtube.com/embed/KvUgaHTNit4"
+            frameborder="0"
+            allowfullscreen="allowfullscreen"
+            mozallowfullscreen="mozallowfullscreen"
+            msallowfullscreen="msallowfullscreen"
+            oallowfullscreen="oallowfullscreen"
+            webkitallowfullscreen="webkitallowfullscreen"></iframe>
+        </div>
+      )}
       <div className={classes.filter}>
 
         <Container fixed className={classes.containter}>
-          <img src="/static/play.png" />
-          <Typography className={classes.title} component="h3">WATCH OUR STORY</Typography>
+
+          <img src="/static/play.png" onClick={() => setOpenVideo(true)} style={{ cursor: "pointer" }} />
+          <Typography className={classes.title} component="h3" onClick={() => setOpenVideo(true)}>WATCH OUR STORY</Typography>
         </Container>
 
       </div>
+      <style jsx>
+        {`
+          .videoWindow{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+          }
+        `}
+      </style>
     </Box>
   )
 }

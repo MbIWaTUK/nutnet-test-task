@@ -93,13 +93,13 @@ const useStyles = makeStyles((theme) => ({
 const Expertise = () => {
   const classes = useStyles()
   return (
-    <Box pt={12} pb={12}>
+    <Box pt={12} pb={12} id="expertise">
       <Container fixed className={classes.container}>
         <Typography className={classes.title}>EXPERTISE</Typography>
         <Typography className={classes.text}>Lorem ipsum dolor sit amet proin gravida nibh vel velit</Typography>
         <div className={classes.lineBlock}></div>
         <Grid container >
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={4}>
             <Box className={classes.item}>
               <div className={classes.itemImg1}>
 
@@ -109,7 +109,7 @@ const Expertise = () => {
               <Typography className={classes.itemText}>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.</Typography>
             </Box>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={4}>
             <Box className={classes.item}>
               <div className={classes.itemImg2}>
 
@@ -119,7 +119,7 @@ const Expertise = () => {
               <Typography className={classes.itemText}>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.</Typography>
             </Box>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={4}>
             <Box className={classes.item}>
               <div className={classes.itemImg3}>
 
@@ -129,7 +129,7 @@ const Expertise = () => {
               <Typography className={classes.itemText}>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.</Typography>
             </Box>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={4}>
             <Box className={classes.item}>
               <div className={classes.itemImg4}>
 
@@ -139,7 +139,7 @@ const Expertise = () => {
               <Typography className={classes.itemText}>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.</Typography>
             </Box>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={4}>
             <Box className={classes.item}>
               <div className={classes.itemImg5}>
 
@@ -149,7 +149,7 @@ const Expertise = () => {
               <Typography className={classes.itemText}>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.</Typography>
             </Box>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={4}>
             <Box className={classes.item}>
               <div className={classes.itemImg6}>
 

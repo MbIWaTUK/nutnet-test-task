@@ -8,7 +8,13 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     position: "relative",
-    backgroundPosition: "center center"
+    backgroundPosition: "center center",
+    "@media(max-width:768px)": {
+      height: "969px",
+    },
+    "@media(max-width:425px)": {
+      height: "1630px",
+    }
   },
   filter: {
     position: "absolute",
@@ -26,7 +32,8 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    flexDirection: "column"
+    flexDirection: "column",
+
   },
   title: {
     fontSize: "22px",
@@ -48,7 +55,15 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: "220px",
     height: "300px",
     backgroundColor: "transparent",
-    border: "1px solid #fff"
+    border: "1px solid #fff",
+    "@media(max-width:1024px)": {
+      width: "215px",
+    }
+  },
+  containerFlex: {
+    "@media(max-width:768px)": {
+      justifyContent: "center",
+    }
   },
   cardTitle: {
     fontSize: "14px",
@@ -94,7 +109,7 @@ const useStyles = makeStyles((theme) => ({
 const Team = () => {
   const classes = useStyles()
   return (
-    <Box className={classes.main}>
+    <Box className={classes.main} id="team">
       <div className={classes.filter}>
 
         <Container fixed className={classes.containter}>
@@ -102,7 +117,7 @@ const Team = () => {
           <Typography className={classes.text} component="span">Lorem ipsum dolor sit amet proin gravida nibh vel velit</Typography>
           <div className={classes.lineBlock}></div>
           <Box className={classes.cardBlock} mt={5} mb={5}>
-            <Grid container spacing={2}>
+            <Grid container spacing={2} className={classes.containerFlex}>
               <Grid item>
                 <Card className={classes.root}>
                   <CardActionArea>

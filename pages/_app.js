@@ -10,40 +10,40 @@ import { Toolbar, Link, AppBar, makeStyles, Container, Grid, Button, ListItem } 
 // import { NavLink as RouterLink } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
-  appBar: {
-    backgroundColor: "transparent",
-    "& .MuiTypography-colorPrimary": {
-      color: "#fff"
-    }
+  // appBar: {
+  //   backgroundColor: "transparent",
+  //   "& .MuiTypography-colorPrimary": {
+  //     color: "#fff"
+  //   }
 
-  }
+  // }
 }))
 
-function ElevationScroll(props) {
-  const { children, window } = props
+// function ElevationScroll(props) {
+//   const { children, window } = props
 
-  // Note that you normally won't need to set the window ref as useScrollTrigger
-  // will default to window.
-  // This is only being set here because the demo is in an iframe.
-  const trigger = useScrollTrigger({
-    disableHysteresis: true,
-    threshold: 0,
-    target: window ? window() : undefined,
-  });
+//   // Note that you normally won't need to set the window ref as useScrollTrigger
+//   // will default to window.
+//   // This is only being set here because the demo is in an iframe.
+//   const trigger = useScrollTrigger({
+//     disableHysteresis: true,
+//     threshold: 0,
+//     target: window ? window() : undefined,
+//   });
 
-  return React.cloneElement(children, {
-    elevation: trigger ? 4 : 0,
-  });
-}
+//   return React.cloneElement(children, {
+//     elevation: trigger ? 4 : 0,
+//   });
+// }
 
-ElevationScroll.propTypes = {
-  children: PropTypes.element.isRequired,
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window: PropTypes.func,
-};
+// ElevationScroll.propTypes = {
+//   children: PropTypes.element.isRequired,
+//   /**
+//    * Injected by the documentation to work in an iframe.
+//    * You won't need it on your project.
+//    */
+//   window: PropTypes.func,
+// };
 
 export default function MyApp({ Component, pageProps, props }) {
   const classes = useStyles()
@@ -64,7 +64,7 @@ export default function MyApp({ Component, pageProps, props }) {
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
 
-        <ElevationScroll {...props}>
+        {/* <ElevationScroll {...props}>
 
           <AppBar className={classes.appBar}>
             <Toolbar className={classes.appBar}>
@@ -74,7 +74,7 @@ export default function MyApp({ Component, pageProps, props }) {
                     <img src="/static/tajam .png" />
                   </Grid>
                   <Grid container item spacing={4} xs={10} justify="flex-end">
-                    {/* <ListItem
+                    <ListItem
                     disableGutters
                   >
                     <Button
@@ -83,7 +83,7 @@ export default function MyApp({ Component, pageProps, props }) {
                       component={RouterLink}
                       to="/"
                     >Home</Button>
-                  </ListItem> */}
+                  </ListItem>
                     <Grid item>
                       <Link href="#">HOME</Link>
                     </Grid>
@@ -112,8 +112,7 @@ export default function MyApp({ Component, pageProps, props }) {
             </Toolbar>
           </AppBar>
 
-        </ElevationScroll>
-
+        </ElevationScroll> */}
 
         <Component {...pageProps} />
       </ThemeProvider>

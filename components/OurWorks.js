@@ -34,10 +34,18 @@ const useStyles = makeStyles((theme) => ({
 const OurWorks = () => {
   const classes = useStyles()
   return (
-    <Box pt={12} pb={12}>
+    <Box pt={12} pb={12} id="ourWorks">
       <Container fixed>
-        <Typography className={classes.title}>OUR WORKS</Typography>
-        <Typography className={classes.text}>See All Project in dribbble ></Typography>
+        <Grid container alignItems="center" justify="space-between">
+          <Grid item >
+            <Typography className={classes.title} >OUR WORKS</Typography>
+          </Grid>
+          <Grid item>
+            <Typography className={classes.text} >See All Project in dribbble ></Typography>
+          </Grid>
+        </Grid>
+
+
       </Container>
       <Box className={classes.block}>
 

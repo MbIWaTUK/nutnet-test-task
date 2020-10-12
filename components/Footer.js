@@ -10,7 +10,13 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     position: "relative",
-    backgroundPosition: "center center"
+    backgroundPosition: "center center",
+    "@media(max-width:768px)": {
+      height: "560px"
+    },
+    "@media(max-width:425px)": {
+      height: "765px"
+    }
   },
   filter: {
     position: "absolute",
@@ -36,6 +42,12 @@ const useStyles = makeStyles((theme) => ({
     color: "#fff",
     fontWeight: "300",
     fontFamily: "Roboto",
+    "@media(max-width:768px)": {
+      fontSize: "12px"
+    },
+    "@media(max-width:425px)": {
+      fontSize: "10px"
+    }
   },
   title: {
     fontSize: "15px",
@@ -44,7 +56,13 @@ const useStyles = makeStyles((theme) => ({
     color: "#fff",
     fontWeight: "900",
     fontFamily: "Roboto",
-    paddingBottom: "20px"
+    paddingBottom: "20px",
+    "@media(max-width:768px)": {
+      fontSize: "13px"
+    },
+    "@media(max-width:425px)": {
+      fontSize: "11px"
+    }
   },
   input: {
     color: '#fff',
@@ -70,6 +88,24 @@ const useStyles = makeStyles((theme) => ({
       '&.Mui-focused fieldset': {
         borderColor: '#fff',
       },
+    },
+    "@media(max-width:1024px)": {
+      width: "178px",
+      "& .MuiFormLabel-root": {
+        fontSize: "13px"
+      },
+    },
+    "@media(max-width:768px)": {
+      width: "110px",
+      "& .MuiOutlinedInput-input": {
+        padding: "10px 10px"
+      },
+      "& .MuiInputLabel-outlined": {
+        transform: "translate(14px, 7px) scale(1)"
+      },
+      "& .MuiInputLabel-shrink": {
+        transform: "translate(14px, -15px) scale(0.75)"
+      }
     }
   },
   copyright: {
@@ -79,7 +115,9 @@ const useStyles = makeStyles((theme) => ({
     color: "#fff",
     fontWeight: "400",
     fontFamily: "Roboto",
-
+    "@media(max-width:768px)": {
+      fontSize: "8px"
+    }
   },
 
   bottomText: {
@@ -89,17 +127,26 @@ const useStyles = makeStyles((theme) => ({
     color: "#fff",
     fontWeight: "400",
     fontFamily: "Roboto",
+    "@media(max-width:768px)": {
+      fontSize: "9px"
+    }
+  },
+  send: {
+    height: "54px",
+    "@media(max-width:768px)": {
+      height: "20px"
+    }
   }
 }))
 
 const Footer = () => {
   const classes = useStyles()
   return (
-    <Box className={classes.main} >
+    <Box className={classes.main} id="footer">
       <div className={classes.filter}>
         <Container fixed className={classes.block}>
           <Grid container spacing={3} direction="row">
-            <Grid item container direction="column" xs={4} spacing={2}>
+            <Grid item container direction="column" xs={12} sm={4} spacing={2}>
               <Grid item>
                 <img src="/static/tajam .png" />
               </Grid>
@@ -107,11 +154,11 @@ const Footer = () => {
                 <Typography className={classes.text}>lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh elit. Duis sed odio sit amet auctror a ornare odio non mauris vitae erat in elit</Typography>
               </Grid>
             </Grid>
-            <Grid item container direction="column" xs={4} spacing={2}>
+            <Grid item container direction="column" xs={12} sm={4} spacing={2}>
               <Grid item>
                 <Typography className={classes.title}>OUR STUDIO</Typography>
               </Grid>
-              <Grid container item spacing={1} noWrap>
+              <Grid container item spacing={1} wrap="nowrap">
                 <Grid item>
                   <RoomOutlinedIcon style={{ color: "#fff" }} />
                 </Grid>
@@ -120,7 +167,7 @@ const Footer = () => {
                 </Grid>
 
               </Grid>
-              <Grid container item spacing={1}>
+              <Grid container item spacing={1} wrap="nowrap">
                 <Grid item>
                   <PhoneEnabledOutlinedIcon style={{ color: "#fff" }} />
                 </Grid>
@@ -130,16 +177,16 @@ const Footer = () => {
 
               </Grid>
             </Grid>
-            <Grid item container direction="column" xs={4} spacing={2}>
+            <Grid item container direction="column" xs={12} sm={4} spacing={2}>
               <Grid item>
                 <Typography className={classes.title}>STAY IN TOUCH</Typography>
               </Grid>
-              <Grid container item spacing={2} >
+              <Grid container item spacing={1} >
                 <Grid item>
                   <TextField label="Subscribe our newsletter" variant="outlined" className={classes.input} />
                 </Grid>
                 <Grid item>
-                  <img src="/static/paper122.png" style={{ height: "54px" }} />
+                  <img src="/static/paper122.png" className={classes.send} />
                 </Grid>
               </Grid>
               <Grid item container spacing={2}>
@@ -169,7 +216,7 @@ const Footer = () => {
         <Container fixed>
           <Box pt={8} >
             <Grid container justify="space-between">
-              <Grid container item spacing={3} xs={4}>
+              <Grid container item spacing={3} xs={12} sm={6}>
                 <Grid item>
                   <Typography className={classes.bottomText}>HELP</Typography>
                 </Grid>
@@ -181,7 +228,7 @@ const Footer = () => {
                 </Grid>
               </Grid>
               <Grid item>
-                <Typography className={classes.copyright} xs={4}>Copyright © 2015 - Tajem Creative</Typography>
+                <Typography className={classes.copyright} xs={12} sm={4}>Copyright © 2015 - Tajem Creative</Typography>
               </Grid>
             </Grid>
           </Box>

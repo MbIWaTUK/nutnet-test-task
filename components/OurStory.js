@@ -1,4 +1,4 @@
-import { Box, makeStyles, Container, Typography, Button } from "@material-ui/core"
+import { Box, makeStyles, Container, Typography, Button, Hidden } from "@material-ui/core"
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -9,7 +9,10 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "flex-start",
-    paddingLeft: "100px"
+    paddingLeft: "100px",
+    "@media(max-width:425px)": {
+      paddingLeft: "0px",
+    }
   },
   title: {
     fontSize: "22px",
@@ -40,9 +43,12 @@ const useStyles = makeStyles((theme) => ({
 const OurStory = () => {
   const classes = useStyles()
   return (
-    <Box pt={12} pb={12}>
+    <Box pt={12} pb={12} id="ourStory">
       <Container fixed className={classes.container}>
-        <img src="/static/Page 1.png" />
+        <Hidden xsDown>
+          <img src="/static/Page 1.png" />
+        </Hidden>
+
         <Box className={classes.textBox}>
           <Typography className={classes.title} component="h3">OUR STORY</Typography>
           <Typography className={classes.text} style={{ marginBottom: "15px" }}>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus</Typography>

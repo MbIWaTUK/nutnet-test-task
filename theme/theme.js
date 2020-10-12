@@ -3,6 +3,15 @@ import { red } from "@material-ui/core/colors"
 
 // Create a theme instance.
 const theme = createMuiTheme({
+  overrides: {
+    MuiCssBaseline: {
+      '@global': {
+        html: {
+          scrollBehavior: "smooth"
+        },
+      },
+    },
+  },
   palette: {
     primary: {
       main: "#556cd6",

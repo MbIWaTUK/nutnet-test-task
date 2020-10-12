@@ -7,6 +7,9 @@ const useStyles = makeStyles((theme) => ({
     color: "#413d4b",
     fontWeight: "700",
     fontFamily: "Playfair Display",
+    "@media(max-width:425px)": {
+      fontSize: "18px"
+    }
   },
   btn: {
     fontSize: "16px",
@@ -19,20 +22,33 @@ const useStyles = makeStyles((theme) => ({
   },
   inputForm: {
     width: "460px",
-
+    "@media(max-width:425px)": {
+      width: "100%"
+    }
   },
   areaForm: {
     width: "460px",
-    height: "200px"
+    height: "200px",
+    "@media(max-width:425px)": {
+      width: "100%"
+    }
+  },
+  block: {
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "column",
+    "@media(max-width:425px)": {
+
+    }
   }
 }))
 
 const Message = () => {
   const classes = useStyles()
   return (
-    <Box pt={12} pb={12}>
+    <Box pt={12} pb={12} id="message">
       <Container fixed>
-        <Grid container spacing={4} alignItems="center" justify="center" direction="column">
+        <Grid container spacing={4} className={classes.block} >
           <Grid item xs={12}>
             <Typography className={classes.title}>GIVE US A GOOD NEWS</Typography>
           </Grid>
